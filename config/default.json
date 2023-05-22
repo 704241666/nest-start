@@ -1,0 +1,10 @@
+{
+  "database":{
+    "host":"localhost",
+    "port":3306
+  },
+  "logger":{
+    "logger_on":true,
+    "logger_level":"info"
+  }
+}
