@@ -6,5 +6,7 @@
   "logger":{
     "logger_on":true,
     "logger_level":"warn"
-  }
+    
+  },
+  "secret":"1234"
 }

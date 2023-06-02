@@ -2,5 +2,6 @@
   "database":{
     "host":"dev",
     "port":3306
-  }
+  },
+  "secret":"i1j3kop5pnjk63jlbp9sdf7"
 }
