@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, IsArray } from 'class-validator';
 
 export class CreateRoleDto {
   @IsString()
@@ -6,4 +6,7 @@ export class CreateRoleDto {
   name: string;
 
   role_id?: number;
+
+  @IsString({ each: true })
+  role_auth?: string[];
 }

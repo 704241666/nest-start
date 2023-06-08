@@ -50,7 +50,7 @@ export class AuthController {
     };
   }
 
-  // @Serialize(LoginDto) //将返回的数据进行序列化，只返回username
+  @Serialize(LoginDto) //将返回的数据进行序列化，只返回username
   @Post('register')
   register(@Body(CreateUserPipe) dto: RegisterUserDto) {
     const { username, password } = dto;

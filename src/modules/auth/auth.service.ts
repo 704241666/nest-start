@@ -13,7 +13,8 @@ export class AuthService {
       return this.jwt.signAsync(
         {
           username: user.username,
-          user_id: user._id,
+          user_id: user.user_id,
+          roles: user.roles,
         },
         // { expiresIn: '1d' },
       );

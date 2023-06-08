@@ -5,6 +5,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Role } from './entities/role.entity';
 import { Model } from 'mongoose';
 import { IdsService } from '../ids/ids.service';
+import { Action } from '../../enum/action.enum';
 
 @Injectable()
 export class RolesService {
@@ -17,11 +18,16 @@ export class RolesService {
         this.roleModel.create({
           name: '超级管理员',
           role_id: 0,
+          role_auth: [Action.READ, Action.CREATE, Action.UPDATE, Action.DELETE],
         });
       }
     });
   }
   async create(createRoleDto: CreateRoleDto) {
+    console.log(
+      '🚀 ~ file: roles.service.ts:27 ~ RolesService ~ create ~ createRoleDto:',
+      createRoleDto,
+    );
     const role = await this.findOneByName(createRoleDto.name);
     if (role) {
       throw new ConflictException('角色名已存在');

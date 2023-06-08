@@ -16,7 +16,7 @@ import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { CreateUserPipe } from './pipes/create-user.pipe';
 import { AuthGuard } from '@nestjs/passport';
-import { JwtGuards } from '../../guards/jwt.guard';
+import { JwtGuard } from '../../guards/jwt.guard';
 
 @Controller('user')
 export class UserController {
@@ -25,7 +25,7 @@ export class UserController {
     private readonly userService: UserService,
   ) {}
   @Get()
-  @UseGuards(JwtGuards)
+  @UseGuards(JwtGuard)
   async getUsers(): Promise<User[]> {
     return this.userService.find();
 
@@ -34,7 +34,7 @@ export class UserController {
     // this.logger.error('error');
   }
   @Get('/getUser/:id')
-  @UseGuards(JwtGuards)
+  @UseGuards(JwtGuard)
   async findUserById(
     @Param('id') id: string,
     //req 中的user 是通过AuthGuard('jwt')中的validate 方法返回的
