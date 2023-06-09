@@ -1,6 +1,6 @@
 import { Global, Logger, Module } from '@nestjs/common';
 import { UserModule } from '../../modules/user/user.module';
-import { LogsModule } from '../../modules/logs/logs.module';
+import { LogsModule } from '../../modules/logger/logs.module';
 import { APP_FILTER } from '@nestjs/core';
 import { AllExceptionFilter } from '../../filters/all-excepttion.filter';
 import { MongooseModule } from '@nestjs/mongoose';
